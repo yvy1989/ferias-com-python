@@ -1,3 +1,4 @@
+#importação da biblioteca
 import pyttsx3
 
 # Inicialize o mecanismo TTS
