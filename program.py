@@ -2,6 +2,10 @@ import pyttsx3
 import tkinter as tk
 from tkinter import Entry, Button, Frame
 
+CARACTERES=10
+TAM_FONTE=120
+VELOCIDADE_LEITURA=30
+
 def falar_texto():
     # Obtém o texto do campo de entrada
     texto = entry.get()
@@ -10,7 +14,7 @@ def falar_texto():
     rate = engine.getProperty('rate')
 
     # Define uma taxa de fala mais baixa (por exemplo, 150)
-    engine.setProperty('rate', 150)
+    engine.setProperty('rate', VELOCIDADE_LEITURA)
 
     # Fala o texto com a taxa de fala definida
     engine.say(texto)
@@ -31,7 +35,7 @@ frame = Frame(root)
 frame.pack(padx=10, pady=10)
 
 # Adiciona um campo de entrada de texto com fonte aumentada e largura reduzida
-entry = Entry(frame, width=2, font=('Arial', 100))  # Ajuste a fonte e o tamanho aqui
+entry = Entry(frame, width=CARACTERES, font=('Arial', TAM_FONTE))  # Ajuste a fonte e o tamanho aqui
 entry.grid(row=0, column=0, padx=5, pady=5)
 
 # Adiciona um botão para acionar a função de falar
